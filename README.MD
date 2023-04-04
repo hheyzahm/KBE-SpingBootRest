@@ -11,11 +11,13 @@ Commands
 
 `docker image ls`
 
-` docker run -it -p 8080:8080 kbe-rest`
+`docker run -it -p 8080:8080 kbe-rest`
 
-From layers `docker build  -f ./src/main/dockerBaseLayer/Dockerfile -t kbe-rest-layer .`
+For layers 
 
-` docker run -it -p 8080:8080 kbe-rest-layer`
+`docker build  -f ./src/main/dockerBaseLayer/Dockerfile -t kbe-rest-layer .`
+
+`docker run -it -p 8080:8080 kbe-rest-layer`
 
 ###### Note: when using pom plugin for image in docker if ${project.artifactId} is used in name convention then name in ${project.artifactId} should be in small letters. 
 
@@ -27,3 +29,53 @@ command to push on docker
 
 
 above command is used to clean, then build new image, run some tests and push it on docker 
+
+
+
+
+
+
+
+
+
+
+
+`kubectl config get-contexts`
+
+`kubectl config use-context docker-desktop`
+
+`kubectl get nodes`
+
+get cluster
+
+`kubectl get all`
+
+384 KBE - Create Deployment
+
+Generate the yaml file for deployment
+
+kubectl create deployment Name_0f_The_Application --image name_of_the_image_inside_docker_hub --dry-run=client -o=yaml > deployment.yml
+
+--dry-run=client this part tells compiler run it locally
+
+`kubectl create deployment KBE_SpringBootrest --image springboot_application/kbe_spring_boot_rest --dry-run=client -o=yaml > deployment.yml`
+
+to run the above image 
+
+`kubectl apply -f deployment.yml`
+
+to check pod successfully created 
+
+`kubectl get all`
+
+``
+
+``
+
+
+``
+
+``
+
+``
+
