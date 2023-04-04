@@ -12,3 +12,5 @@ Commands
 `docker image ls`
 
 ` docker run -it -p 8080:8080 kbe-rest`
+
+From layers `docker build  -f ./src/main/docker/Dockerfile -t kbe-rest .`

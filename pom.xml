@@ -99,6 +99,10 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.0.4</version>
 				<configuration>
+                    <layers>
+                        <enabled>true</enabled>
+                        <includeLayerTools>true</includeLayerTools>
+                    </layers>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
